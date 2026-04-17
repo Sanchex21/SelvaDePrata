@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Cadastro Plataforma X</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h1>Cadastro</h1>
+
+<p class="instrucoes">
+Preencha os dados abaixo para criar sua conta.<br>
+Campos obrigatórios estão marcados com *.
+</p>
+
+<form>
+
+  <div class="campo-grupo">
+    <label for="nome">Nome completo *</label>
+    <input id="nome" type="text" required>
+  </div>
+
+  <div class="campo-grupo">
+    <label for="idade">Idade *</label>
+    <input id="idade" type="number" required>
+  </div>
+
+  <div class="campo-grupo">
+    <label for="esc">Escolaridade</label>
+    <select id="esc">
+      <option>Ensino Fundamental</option>
+      <option>Ensino Médio</option>
+      <option>Ensino Superior</option>
+      <option>Pós-graduação</option>
+    </select>
+  </div>
+
+  <div class="campo-grupo">
+    <label>Você sabe usar computador? *</label>
+    <div class="radio-group">
+      <input type="radio" name="pc" id="pc-sim" required>
+      <label for="pc-sim">Sim</label>
+
+      <input type="radio" name="pc" id="pc-nao">
+      <label for="pc-nao">Não</label>
+    </div>
+  </div>
+
+  <div class="campo-grupo">
+    <label for="aparelho">Dispositivo principal (celular, computador, etc.) *</label>
+    <input id="aparelho" type="text" required>
+  </div>
+
+  <div class="campo-grupo">
+    <label>
+      <input type="checkbox"> Já utilizou esta plataforma antes?
+    </label>
+  </div>
+
+  <div class="campo-grupo">
+    <label>
+      <input type="checkbox"> Usa leitor de tela?
+    </label>
+  </div>
+
+  <div class="campo-grupo">
+    <label>Data de nascimento *</label>
+    <small>Formato: DD / MM / AAAA</small>
+    <div class="linha">
+      <input type="text" placeholder="DD" required>
+      <input type="text" placeholder="MM" required>
+      <input type="text" placeholder="AAAA" required>
+    </div>
+  </div>
+
+  <div class="campo-grupo">
+    <label for="renda">Renda mensal (R$)</label>
+    <input id="renda" type="number" placeholder="Ex: 2000">
+  </div>
+
+  <div class="campo-grupo">
+    <label for="def">Possui deficiência visual?</label>
+    <select id="def">
+      <option>Não</option>
+      <option>Sim</option>
+    </select>
+  </div>
+
+  <button type="submit">Criar conta</button>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

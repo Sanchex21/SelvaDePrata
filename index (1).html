@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Selva de Prata — Cadastro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f0f4f8 100%);
+      min-height: 100vh;
+      padding: 30px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 520px;
+      margin: auto;
+      padding: 36px 32px 40px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .logo h1 {
+      font-size: 26px;
+      color: #2e7d32;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo p {
+      font-size: 13px;
+      color: #78909c;
+      margin-top: 2px;
+    }
+
+    .divider {
+      height: 3px;
+      background: linear-gradient(90deg, #2e7d32, #a5d6a7);
+      border-radius: 2px;
+      margin: 18px 0 24px;
+    }
+
+    .instrucoes {
+      color: #546e7a;
+      font-size: 13px;
+      margin-bottom: 24px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .campo-grupo {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      color: #37474f;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      padding: 10px 12px;
+      border: 1.5px solid #cfd8dc;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #263238;
+      background: #f9fafb;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #2e7d32;
+      background: #fff;
+    }
+
+    .linha {
+      display: flex;
+      gap: 10px;
+    }
+
+    .linha input { width: 100%; }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .radio-group input { width: auto; accent-color: #2e7d32; }
+
+    .radio-group label {
+      font-weight: normal;
+      font-size: 14px;
+      color: #455a64;
+      margin: 0;
+    }
+
+    .checkbox-label {
+      font-weight: normal;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #455a64;
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: auto;
+      accent-color: #2e7d32;
+    }
+
+    small {
+      display: block;
+      color: #90a4ae;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    button {
+      margin-top: 28px;
+      padding: 14px;
+      background: linear-gradient(90deg, #2e7d32, #43a047);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s;
+    }
+
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">
+    <h1>Selva de Prata</h1>
+    <p>Plataforma de Cadastro</p>
+  </div>
+  <div class="divider"></div>
+
+  <p class="instrucoes">
+    Preencha os dados abaixo para criar sua conta.<br>
+    Campos obrigatórios estão marcados com *.
+  </p>
+
+  <form action="/cadastro" method="POST">
+
+    <div class="campo-grupo">
+      <label for="nome">Nome completo *</label>
+      <input id="nome" name="nome" type="text" required>
+    </div>
+
+    <div class="campo-grupo">
+      <label for="idade">Idade *</label>
+      <input id="idade" name="idade" type="number" required>
+    </div>
+
+    <div class="campo-grupo">
+      <label for="esc">Escolaridade</label>
+      <select id="esc" name="esc">
+        <option>Ensino Fundamental</option>
+        <option>Ensino Médio</option>
+        <option>Ensino Superior</option>
+        <option>Pós-graduação</option>
+      </select>
+    </div>
+
+    <div class="campo-grupo">
+      <label>Você sabe usar computador? *</label>
+      <div class="radio-group">
+        <input type="radio" name="pc" id="pc-sim" value="sim" required>
+        <label for="pc-sim">Sim</label>
+        <input type="radio" name="pc" id="pc-nao" value="nao">
+        <label for="pc-nao">Não</label>
+      </div>
+    </div>
+
+    <div class="campo-grupo">
+      <label for="aparelho">Dispositivo principal (celular, computador, etc.) *</label>
+      <input id="aparelho" name="aparelho" type="text" required>
+    </div>
+
+    <div class="campo-grupo">
+      <label class="checkbox-label">
+        <input type="checkbox" name="ja_usou" value="sim">
+        Já utilizou esta plataforma antes?
+      </label>
+    </div>
+
+    <div class="campo-grupo">
+      <label class="checkbox-label">
+        <input type="checkbox" name="leitor_tela" value="sim">
+        Usa leitor de tela?
+      </label>
+    </div>
+
+    <div class="campo-grupo">
+      <label>Data de nascimento *</label>
+      <small>Formato: DD / MM / AAAA</small>
+      <div class="linha">
+        <input type="text" name="dd" placeholder="DD" maxlength="2" required>
+        <input type="text" name="mm" placeholder="MM" maxlength="2" required>
+        <input type="text" name="aaaa" placeholder="AAAA" maxlength="4" required>
+      </div>
+    </div>
+
+    <div class="campo-grupo">
+      <label for="renda">Renda mensal (R$)</label>
+      <input id="renda" name="renda" type="number" placeholder="Ex: 2000">
+    </div>
+
+    <div class="campo-grupo">
+      <label for="def">Possui deficiência visual?</label>
+      <select id="def" name="def">
+        <option>Não</option>
+        <option>Sim</option>
+      </select>
+    </div>
+
+    <button type="submit">Criar conta</button>
+
+  </form>
+</div>
+
+</body>
+</html>

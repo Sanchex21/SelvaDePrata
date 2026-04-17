@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Selva de Prata — Cadastro realizado</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f0f4f8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 460px;
+      width: 100%;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .icone {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      color: #2e7d32;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #546e7a;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .total {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #90a4ae;
+      background: #f1f8e9;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #2e7d32, #a5d6a7);
+      border-radius: 2px;
+      margin: 28px 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #2e7d32, #43a047);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    a:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icone">✅</div>
+    <h1>Cadastro realizado!</h1>
+    <p>Obrigado, <strong>{{ nome }}</strong>.<br>Seus dados foram registrados com sucesso.</p>
+    <span class="total">Total de usuários cadastrados: <strong>{{ total }}</strong></span>
+    <div class="divider"></div>
+    <a href="/">Voltar ao início</a>
+  </div>
+</body>
+</html>
